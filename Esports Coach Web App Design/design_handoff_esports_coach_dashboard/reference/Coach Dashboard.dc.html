@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Big+Shoulders+Display:wght@800;900&display=swap"><style>body{margin:0;background:#070707}a{color:#EC7A2E}a:hover{color:#FBBF24}
+@keyframes mq{to{transform:translateX(-50%)}}@keyframes spin{to{transform:rotate(405deg)}}@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(3.2);opacity:0}}@keyframes shim{to{background-position:-200% 0}}@keyframes scan{0%{top:-10%}100%{top:110%}}@keyframes blink{50%{opacity:0}}@keyframes float{50%{transform:translateY(-14px) rotate(45deg)}}@keyframes sweep{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+::selection{background:#EC7A2E;color:#070707}</style></helmet>
+<div id="root" style="min-height:100vh;background:#070707;color:#F2EDE6;font-family:'Instrument Sans',sans-serif;position:relative;overflow:hidden">
+
+<div id="loader" style="position:fixed;inset:0;z-index:100;background:#070707;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px">
+<div style="width:34px;height:34px;border:2px solid #EC7A2E;animation:spin 1.1s cubic-bezier(.7,0,.3,1) infinite"></div>
+<div id="lcount" style="font:500 13px 'JetBrains Mono',monospace;color:#7d7366;letter-spacing:.2em">SYNCING 000%</div>
+<div style="width:220px;height:2px;background:#1d1a16"><div id="lbar" style="width:0;height:100%;background:linear-gradient(90deg,#EC7A2E,#FBBF24)"></div></div>
+</div>
+
+<div id="prog" style="position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#EC7A2E,#FBBF24);z-index:50"></div>
+<div id="glow" style="position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;background:radial-gradient(circle,rgba(236,122,46,.17),transparent 65%);pointer-events:none;z-index:1"></div>
+<div style="position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 50% 20%,#000,transparent 75%)"></div>
+<div id="bgtxt" style="position:absolute;top:120px;left:-20px;font:900 520px/0.8 'Big Shoulders Display',sans-serif;color:transparent;-webkit-text-stroke:1px #2a1a10;white-space:nowrap;pointer-events:none;z-index:0;letter-spacing:-.02em">VALORANT</div>
+
+<div style="position:relative;z-index:2;padding:0 56px 100px"><div style="max-width:1120px;margin:0 auto">
+<header data-rv="down" style="display:flex;justify-content:space-between;align-items:center;padding:32px 0;border-bottom:1px solid #1d1a16;gap:24px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:48px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px;letter-spacing:.04em"><div style="width:12px;height:12px;background:#EC7A2E;transform:rotate(45deg);animation:float 3s ease-in-out infinite"></div>COACH</div>
+<nav style="display:flex;gap:28px;font-size:14px">
+<a data-tab="1" style="color:#F2EDE6;text-decoration:none;border-bottom:1px solid #EC7A2E;padding-bottom:6px;cursor:pointer">Valorant</a>
+<a style="color:#7d7366;text-decoration:none;padding-bottom:6px" style-hover="color:#F2EDE6" href="#">League of Legends</a>
+<a style="color:#7d7366;text-decoration:none;padding-bottom:6px" style-hover="color:#F2EDE6" href="#">LiChess</a>
+</nav></div>
+<div style="font:400 12px 'JetBrains Mono',monospace;color:#7d7366;display:flex;gap:12px;align-items:center"><span style="position:relative;width:6px;height:6px"><i style="position:absolute;inset:0;border-radius:50%;background:#EC7A2E"></i><i style="position:absolute;inset:0;border-radius:50%;background:#EC7A2E;animation:pulse 1.8s infinite"></i></span>[PLAYER#0000] · synced [DATE]</div>
+</header>
+
+<div data-rv="fade" style="margin:0 -56px;border-bottom:1px solid #1d1a16;overflow:hidden;white-space:nowrap;padding:14px 0;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#7d7366">
+<div style="display:inline-flex;animation:mq 28s linear infinite;width:max-content">
+<span style="padding-right:48px">K/D <b style="color:#EC7A2E">1.24</b> ▲ &nbsp;&nbsp; WIN <b style="color:#EC7A2E">54%</b> ▲ &nbsp;&nbsp; HS <b style="color:#F2EDE6">23%</b> — &nbsp;&nbsp; ACS <b style="color:#EC7A2E">241</b> ▲ &nbsp;&nbsp; ADR <b style="color:#F2EDE6">148</b> ▼ &nbsp;&nbsp; KAST <b style="color:#EC7A2E">71%</b> ▲ &nbsp;&nbsp; RR <b style="color:#FBBF24">+38</b> ▲ &nbsp;&nbsp; ◆ &nbsp;&nbsp;</span>
+<span style="padding-right:48px">K/D <b style="color:#EC7A2E">1.24</b> ▲ &nbsp;&nbsp; WIN <b style="color:#EC7A2E">54%</b> ▲ &nbsp;&nbsp; HS <b style="color:#F2EDE6">23%</b> — &nbsp;&nbsp; ACS <b style="color:#EC7A2E">241</b> ▲ &nbsp;&nbsp; ADR <b style="color:#F2EDE6">148</b> ▼ &nbsp;&nbsp; KAST <b style="color:#EC7A2E">71%</b> ▲ &nbsp;&nbsp; RR <b style="color:#FBBF24">+38</b> ▲ &nbsp;&nbsp; ◆ &nbsp;&nbsp;</span>
+</div></div>
+
+<section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:64px;padding:72px 0 64px;align-items:end">
+<div data-rv="up" data-hero="1">
+<div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.2em;color:#7d7366;margin-bottom:8px">WIN RATE · LAST 20</div>
+<div id="hero" style="font:900 230px/0.82 'Big Shoulders Display',sans-serif;letter-spacing:-.02em;background:linear-gradient(180deg,#FBBF24,#EC7A2E 60%,#7a3a12);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;transform-origin:left bottom"><span data-count="54">0</span><span style="font-size:100px">%</span></div>
+<div style="font:400 12px 'JetBrains Mono',monospace;color:#EC7A2E;margin-top:20px">▲ +2% vs previous 20</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;perspective:900px">
+<div data-rv="up" data-d="0" data-tilt="1" style="padding:20px;border:1px solid #1d1a16;background:#0d0c0a;position:relative;overflow:hidden"><div style="font-size:12px;color:#7d7366">K/D Ratio</div><div style="font-size:36px;font-weight:500;margin:6px 0 4px;letter-spacing:-.02em" data-count="1.24" data-dec="2">0</div><div style="font:400 11px 'JetBrains Mono',monospace;color:#EC7A2E">▲ 0.06</div></div>
+<div data-rv="up" data-d="80" data-tilt="1" style="padding:20px;border:1px solid #1d1a16;background:#0d0c0a"><div style="font-size:12px;color:#7d7366">Headshot %</div><div style="font-size:36px;font-weight:500;margin:6px 0 4px;letter-spacing:-.02em"><span data-count="23">0</span>%</div><div style="font:400 11px 'JetBrains Mono',monospace;color:#7d7366">— no change</div></div>
+<div data-rv="up" data-d="160" data-tilt="1" style="padding:20px;border:1px solid #1d1a16;background:#0d0c0a"><div style="font-size:12px;color:#7d7366">Avg Combat Score</div><div style="font-size:36px;font-weight:500;margin:6px 0 4px;letter-spacing:-.02em" data-count="241">0</div><div style="font:400 11px 'JetBrains Mono',monospace;color:#EC7A2E">▲ 11</div></div>
+<div data-rv="up" data-d="240" data-tilt="1" style="padding:20px;border:1px solid #1d1a16;background:#0d0c0a"><div style="font-size:12px;color:#7d7366">Damage / Round</div><div style="font-size:36px;font-weight:500;margin:6px 0 4px;letter-spacing:-.02em" data-count="148">0</div><div style="font:400 11px 'JetBrains Mono',monospace;color:#7d7366">▼ 3</div></div>
+<div data-rv="up" data-d="320" data-tilt="1" style="padding:20px;border:1px solid #1d1a16;background:#0d0c0a"><div style="font-size:12px;color:#7d7366">KAST</div><div style="font-size:36px;font-weight:500;margin:6px 0 4px;letter-spacing:-.02em"><span data-count="71">0</span>%</div><div style="font:400 11px 'JetBrains Mono',monospace;color:#EC7A2E">▲ 1%</div></div>
+<div data-rv="up" data-d="400" data-tilt="1" style="padding:20px;border:1px solid #EC7A2E;background:#EC7A2E;color:#070707"><div style="font-size:12px;opacity:.8">Matches</div><div style="font-size:36px;font-weight:600;margin:6px 0 4px;letter-spacing:-.02em" data-count="12">0</div><div style="font:500 11px 'JetBrains Mono',monospace">this week</div></div>
+</div>
+</section>
+
+<section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:48px;padding:56px 0;border-top:1px solid #1d1a16">
+<div data-rv="up" style="grid-column:span 1">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px"><div style="font-size:16px;font-weight:600">Rank rating</div><div style="font-size:12px;color:#7d7366">Last 10 matches</div></div>
+<svg viewBox="0 0 652 230" style="width:100%;display:block;overflow:visible">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EC7A2E" stop-opacity=".35"></stop><stop offset="1" stop-color="#EC7A2E" stop-opacity="0"></stop></linearGradient></defs>
+<line x1="0" y1="40" x2="652" y2="40" stroke="#1d1a16"></line><line x1="0" y1="100" x2="652" y2="100" stroke="#1d1a16"></line><line x1="0" y1="160" x2="652" y2="160" stroke="#1d1a16"></line>
+<polygon data-area="1" points="20,190 20,150 88,120 156,135 224,95 292,110 360,70 428,85 496,50 564,58 632,35 632,190" fill="url(#g)" style="opacity:0"></polygon>
+<polyline data-draw="1" pathLength="1" points="20,150 88,120 156,135 224,95 292,110 360,70 428,85 496,50 564,58 632,35" fill="none" stroke="#EC7A2E" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1"></polyline>
+<g data-dots="1" style="opacity:0"><circle cx="20" cy="150" r="3.5" fill="#070707" stroke="#EC7A2E" stroke-width="1.5"></circle><circle cx="88" cy="120" r="3.5" fill="#070707" stroke="#EC7A2E" stroke-width="1.5"></circle><circle cx="156" cy="135" r="3.5" fill="#070707" stroke="#EC7A2E" stroke-width="1.5"></circle><circle cx="224" cy="95" r="3.5" fill="#070707" stroke="#EC7A2E" stroke-width="1.5"></circle><circle cx="292" cy="110" r="3.5" fill="#070707" stroke="#EC7A2E" stroke-width="1.5"></circle><circle cx="360" cy="70" r="3.5" fill="#070707" stroke="#EC7A2E" stroke-width="1.5"></circle><circle cx="428" cy="85" r="3.5" fill="#070707" stroke="#EC7A2E" stroke-width="1.5"></circle><circle cx="496" cy="50" r="3.5" fill="#070707" stroke="#EC7A2E" stroke-width="1.5"></circle><circle cx="564" cy="58" r="3.5" fill="#070707" stroke="#EC7A2E" stroke-width="1.5"></circle></g>
+<g data-end="1" style="opacity:0"><circle cx="632" cy="35" r="5" fill="#FBBF24"></circle><circle cx="632" cy="35" r="5" fill="none" stroke="#FBBF24" stroke-width="2" style="transform-origin:632px 35px;animation:pulse 1.8s infinite"></circle><text x="632" y="14" text-anchor="end" fill="#FBBF24" font-family="JetBrains Mono" font-size="12">+38 RR</text></g>
+<g fill="#7d7366" font-family="JetBrains Mono" font-size="11" text-anchor="middle"><text x="20" y="215">1</text><text x="88" y="215">2</text><text x="156" y="215">3</text><text x="224" y="215">4</text><text x="292" y="215">5</text><text x="360" y="215">6</text><text x="428" y="215">7</text><text x="496" y="215">8</text><text x="564" y="215">9</text><text x="632" y="215">10</text></g>
+</svg>
+</div>
+<div data-rv="up" data-d="150">
+<div style="font-size:16px;font-weight:600;margin-bottom:24px">Role distribution</div>
+<div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+<div style="position:relative;width:180px;height:180px;flex:none">
+<svg viewBox="0 0 180 180" style="width:100%;transform:rotate(-90deg)"><g fill="none" stroke-width="12">
+<circle data-seg="172" data-off="0" cx="90" cy="90" r="70" stroke="#EC7A2E" stroke-dasharray="0 440"></circle>
+<circle data-seg="106" data-off="-175.9" cx="90" cy="90" r="70" stroke="#FBBF24" stroke-dasharray="0 440" stroke-dashoffset="-175.9"></circle>
+<circle data-seg="84" data-off="-285.9" cx="90" cy="90" r="70" stroke="#C48A5C" stroke-dasharray="0 440" stroke-dashoffset="-285.9"></circle>
+<circle data-seg="62" data-off="-373.9" cx="90" cy="90" r="70" stroke="#6B5A4A" stroke-dasharray="0 440" stroke-dashoffset="-373.9"></circle></g></svg>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font-size:34px;font-weight:500" data-count="12">0</div><div style="font-size:11px;color:#7d7366">matches</div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:13px;flex:1;min-width:140px">
+<div style="display:flex;justify-content:space-between"><span style="display:flex;gap:10px;align-items:center"><i style="width:8px;height:8px;background:#EC7A2E"></i>Duelist</span><span style="font-family:'JetBrains Mono';color:#7d7366">40%</span></div>
+<div style="display:flex;justify-content:space-between"><span style="display:flex;gap:10px;align-items:center"><i style="width:8px;height:8px;background:#FBBF24"></i>Controller</span><span style="font-family:'JetBrains Mono';color:#7d7366">25%</span></div>
+<div style="display:flex;justify-content:space-between"><span style="display:flex;gap:10px;align-items:center"><i style="width:8px;height:8px;background:#C48A5C"></i>Initiator</span><span style="font-family:'JetBrains Mono';color:#7d7366">20%</span></div>
+<div style="display:flex;justify-content:space-between"><span style="display:flex;gap:10px;align-items:center"><i style="width:8px;height:8px;background:#6B5A4A"></i>Sentinel</span><span style="font-family:'JetBrains Mono';color:#7d7366">15%</span></div>
+</div></div></div>
+</section>
+
+<section style="padding:56px 0;border-top:1px solid #1d1a16">
+<div data-rv="up" style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:44px"><div style="font-size:16px;font-weight:600">Win rate by map</div><div style="font-size:12px;color:#7d7366">Last 30 matches</div></div>
+<div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:16px;align-items:end;height:260px;border-bottom:1px solid #2a251f;position:relative">
+<div style="position:absolute;left:0;right:0;top:0;border-top:1px dashed #1d1a16"></div><div style="position:absolute;left:0;right:0;top:33%;border-top:1px dashed #1d1a16"></div><div style="position:absolute;left:0;right:0;top:66%;border-top:1px dashed #1d1a16"></div>
+<div data-bar="82" style="height:82%;background:linear-gradient(180deg,#6B3A1C,#2a1a10);position:relative;transform-origin:bottom;transform:scaleY(0)" style-hover="filter:brightness(1.6)"><span style="position:absolute;top:-24px;left:0;font:400 12px 'JetBrains Mono';color:#7d7366">82</span></div>
+<div data-bar="64" style="height:64%;background:linear-gradient(180deg,#6B3A1C,#2a1a10);position:relative;transform-origin:bottom;transform:scaleY(0)" style-hover="filter:brightness(1.6)"><span style="position:absolute;top:-24px;left:0;font:400 12px 'JetBrains Mono';color:#7d7366">64</span></div>
+<div data-bar="92" style="height:92%;background:linear-gradient(180deg,#FBBF24,#EC7A2E 40%,#8a4414);position:relative;transform-origin:bottom;transform:scaleY(0);box-shadow:0 0 50px #EC7A2E55;overflow:visible"><span style="position:absolute;top:-24px;left:0;font:500 12px 'JetBrains Mono';color:#FBBF24">92 · BEST</span></div>
+<div data-bar="52" style="height:52%;background:linear-gradient(180deg,#6B3A1C,#2a1a10);position:relative;transform-origin:bottom;transform:scaleY(0)" style-hover="filter:brightness(1.6)"><span style="position:absolute;top:-24px;left:0;font:400 12px 'JetBrains Mono';color:#7d7366">52</span></div>
+<div data-bar="72" style="height:72%;background:linear-gradient(180deg,#6B3A1C,#2a1a10);position:relative;transform-origin:bottom;transform:scaleY(0)" style-hover="filter:brightness(1.6)"><span style="position:absolute;top:-24px;left:0;font:400 12px 'JetBrains Mono';color:#7d7366">72</span></div>
+<div data-bar="47" style="height:47%;background:linear-gradient(180deg,#6B3A1C,#2a1a10);position:relative;transform-origin:bottom;transform:scaleY(0)" style-hover="filter:brightness(1.6)"><span style="position:absolute;top:-24px;left:0;font:400 12px 'JetBrains Mono';color:#7d7366">47</span></div>
+<div data-bar="67" style="height:67%;background:linear-gradient(180deg,#6B3A1C,#2a1a10);position:relative;transform-origin:bottom;transform:scaleY(0)" style-hover="filter:brightness(1.6)"><span style="position:absolute;top:-24px;left:0;font:400 12px 'JetBrains Mono';color:#7d7366">67</span></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:16px;margin-top:12px;font-size:12px;color:#7d7366"><span>Map 1</span><span>Map 2</span><span style="color:#F2EDE6">Map 3</span><span>Map 4</span><span>Map 5</span><span>Map 6</span><span>Map 7</span></div>
+</section>
+
+<section data-rv="up" style="padding:56px 0 0;border-top:1px solid #1d1a16">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;gap:16px;flex-wrap:wrap">
+<div><div style="font-size:16px;font-weight:600;display:flex;align-items:center;gap:10px">AI coach report <span style="font:500 10px 'JetBrains Mono';letter-spacing:.14em;padding:3px 8px;border:1px solid #EC7A2E;color:#EC7A2E">LIVE</span></div><div style="font-size:13px;color:#7d7366;margin-top:6px">Generated from your last [N] matches</div></div>
+<button id="regen" style="position:relative;overflow:hidden;background:#EC7A2E;border:0;color:#070707;font:600 13px 'Instrument Sans',sans-serif;padding:13px 24px;border-radius:999px;cursor:pointer" style-hover="background:#FBBF24">Regenerate ↻<i style="position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,#fff8,transparent 70%);animation:sweep 2.6s infinite"></i></button>
+</div>
+<div id="rep" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;position:relative">
+<div style="border:1px solid #1d1a16;background:#0d0c0a;padding:28px;position:relative;overflow:hidden"><div style="font:500 11px 'JetBrains Mono',monospace;color:#EC7A2E;margin-bottom:16px;letter-spacing:.1em">01 — STRENGTHS</div><p data-type="[Placeholder: summary of what the player does well, e.g. opening duels, mechanical consistency.]" style="margin:0;font-size:15px;line-height:1.65;color:#cfc6ba;min-height:100px"></p></div>
+<div style="border:1px solid #1d1a16;background:#0d0c0a;padding:28px;position:relative;overflow:hidden"><div style="font:500 11px 'JetBrains Mono',monospace;color:#FBBF24;margin-bottom:16px;letter-spacing:.1em">02 — WEAKNESSES</div><p data-type="[Placeholder: patterns costing rounds, e.g. map-specific losses, late-round positioning.]" style="margin:0;font-size:15px;line-height:1.65;color:#cfc6ba;min-height:100px"></p></div>
+<div style="border:1px solid #1d1a16;background:#0d0c0a;padding:28px;position:relative;overflow:hidden"><div style="font:500 11px 'JetBrains Mono',monospace;color:#C48A5C;margin-bottom:16px;letter-spacing:.1em">03 — NEXT STEPS</div><p data-type="[Placeholder: 2–3 concrete drills or habits to focus on over the next week.]" style="margin:0;font-size:15px;line-height:1.65;color:#cfc6ba;min-height:100px"></p></div>
+<div id="scanline" style="position:absolute;left:0;right:0;height:60px;top:-10%;background:linear-gradient(180deg,transparent,#EC7A2E33,transparent);border-bottom:1px solid #EC7A2E;pointer-events:none;opacity:0"></div>
+</div>
+</section>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const q = (s, r = document) => [...r.querySelectorAll(s)];
+    const ease = 'cubic-bezier(.16,1,.3,1)';
+    const root = document.getElementById('root');
+    const scroller = () => document.scrollingElement || document.documentElement;
+    q('[data-rv]').forEach(e => { const k = e.dataset.rv; e.style.opacity = 0; e.style.transform = k === 'down' ? 'translateY(-30px)' : k === 'fade' ? 'none' : 'translateY(60px) scale(.97)'; e.style.filter = 'blur(8px)'; });
+    const count = (el) => {
+      const to = parseFloat(el.dataset.count), d = +(el.dataset.dec || 0), t0 = performance.now(), dur = 1800;
+      const f = (t) => { const p = Math.min(1, (t - t0) / dur), v = to * (1 - Math.pow(1 - p, 4)); el.textContent = v.toFixed(d); if (p < 1) requestAnimationFrame(f); };
+      requestAnimationFrame(f);
+    };
+    const type = (p, delay = 0) => {
+      const txt = p.dataset.type; p.textContent = '';
+      const s = document.createElement('span'), c = document.createElement('i');
+      c.style.cssText = 'display:inline-block;width:7px;height:15px;background:#EC7A2E;margin-left:2px;vertical-align:-2px;animation:blink .8s infinite';
+      p.append(s, c); let i = 0;
+      setTimeout(() => { const iv = setInterval(() => { s.textContent = txt.slice(0, ++i); if (i >= txt.length) { clearInterval(iv); setTimeout(() => c.remove(), 1200); } }, 22); }, delay);
+    };
+    const play = (el) => {
+      const d = +(el.dataset.d || 0);
+      if (el.dataset.rv) el.animate([{ opacity: 0, filter: 'blur(8px)', transform: el.style.transform || 'none' }, { opacity: 1, filter: 'blur(0)', transform: 'none' }], { duration: 1100, delay: d, easing: ease, fill: 'forwards' });
+      q('[data-count]', el).concat(el.dataset.count ? [el] : []).forEach(n => setTimeout(() => count(n), d + 200));
+      q('[data-draw]', el).forEach(n => { n.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 2200, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'forwards', delay: 200 }); });
+      q('[data-area]', el).forEach(n => n.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 1200, delay: 1400, fill: 'forwards' }));
+      q('[data-dots]', el).forEach(n => n.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 800, delay: 1800, fill: 'forwards' }));
+      q('[data-end]', el).forEach(n => n.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, delay: 2300, fill: 'forwards' }));
+      q('[data-seg]', el).forEach((n, i) => { const l = +n.dataset.seg; n.animate([{ strokeDasharray: '0 440' }, { strokeDasharray: l + ' ' + (440 - l) }], { duration: 1200, delay: 300 + i * 260, easing: ease, fill: 'forwards' }); });
+      q('[data-type]', el).forEach((p, i) => type(p, 300 + i * 500));
+    };
+    this.regenFn = () => {
+      const sc = document.getElementById('scanline'), ps = q('[data-type]');
+      ps.forEach(p => { p.textContent = 'Analyzing matches…'; p.style.cssText += ';background:linear-gradient(90deg,#7d7366 30%,#FBBF24 50%,#7d7366 70%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 1.2s linear infinite'; });
+      sc.style.opacity = 1; sc.animate([{ top: '-20%' }, { top: '110%' }], { duration: 1500, easing: 'ease-in-out' }).onfinish = () => { sc.style.opacity = 0; };
+      setTimeout(() => ps.forEach((p, i) => { p.style.background = 'none'; p.style.animation = 'none'; p.style.color = '#cfc6ba'; p.style.webkitTextFillColor = '#cfc6ba'; type(p, i * 350); }), 1500);
+    };
+    document.getElementById('regen').onclick = this.regenFn;
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); play(e.target); } }), { threshold: .15 });
+    const bars = q('[data-bar]');
+    const bio = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { bio.disconnect(); bars.forEach((b, i) => b.animate([{ transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }], { duration: 1300, delay: i * 120, easing: 'cubic-bezier(.34,1.4,.5,1)', fill: 'forwards' })); } }, { threshold: .3 });
+    bio.observe(bars[0].parentElement);
+    const start = () => q('[data-rv]').forEach(e => io.observe(e));
+    const lc = document.getElementById('lcount'), lb = document.getElementById('lbar'), ld = document.getElementById('loader'); const t0 = performance.now();
+    const lf = (t) => { const p = Math.min(1, (t - t0) / 1900), v = Math.round(p * 100); lc.textContent = 'SYNCING ' + String(v).padStart(3, '0') + '%'; lb.style.width = v + '%';
+      if (p < 1) requestAnimationFrame(lf); else { ld.animate([{ clipPath: 'inset(0 0 0 0)' }, { clipPath: 'inset(0 0 100% 0)' }], { duration: 900, easing: 'cubic-bezier(.7,0,.2,1)', fill: 'forwards' }).onfinish = () => ld.remove(); setTimeout(start, 350); } };
+    requestAnimationFrame(lf);
+    const glow = document.getElementById('glow'), prog = document.getElementById('prog'), bg = document.getElementById('bgtxt'), hero = document.getElementById('hero');
+    this.mm = (e) => { glow.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; };
+    window.addEventListener('mousemove', this.mm);
+    q('[data-tilt]').forEach(t => { t.style.transition = 'transform .25s, border-color .25s'; t.addEventListener('mousemove', e => { const r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; t.style.transform = `rotateY(${x * 18}deg) rotateX(${-y * 18}deg) translateZ(10px)`; t.style.borderColor = '#EC7A2E'; }); t.addEventListener('mouseleave', () => { t.style.transform = ''; t.style.borderColor = ''; }); });
+    this.sc = () => { const s = scroller(), y = s.scrollTop, m = s.scrollHeight - s.clientHeight; prog.style.width = (m > 0 ? y / m * 100 : 0) + '%'; bg.style.transform = `translateX(${-y * .35}px)`; hero.style.transform = `scale(${1 + Math.min(y, 600) / 2400}) translateY(${y * -.08}px)`; };
+    window.addEventListener('scroll', this.sc, true); this.sc();
+  }
+  componentWillUnmount() { window.removeEventListener('mousemove', this.mm); window.removeEventListener('scroll', this.sc, true); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
